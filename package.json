@@ -1,0 +1,35 @@
+{
+  "name": "postcss-randomcolor",
+  "version": "0.0.0",
+  "description": "PostCSS plugin supports function to use random color",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "colors",
+    "random"
+  ],
+  "author": "alanev <e@alanev.ru>",
+  "license": "MIT",
+  "repository": "alanev/postcss-randomcolor",
+  "bugs": {
+    "url": "https://github.com/alanev/postcss-randomcolor/issues"
+  },
+  "homepage": "https://github.com/alanev/postcss-randomcolor",
+  "dependencies": {
+    "postcss": "^5.0.21",
+    "postcss-value-parser": "^3.3.0",
+    "randomcolor": "^0.4.4"
+  },
+  "devDependencies": {
+    "ava": "^0.14.0",
+    "eslint": "^2.10.0",
+    "eslint-config-postcss": "^2.0.2"
+  },
+  "scripts": {
+    "test": "ava && eslint *.js"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss/es5"
+  }
+}
