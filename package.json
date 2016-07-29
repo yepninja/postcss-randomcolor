@@ -1,7 +1,7 @@
 {
   "name": "postcss-randomcolor",
   "version": "0.0.0",
-  "description": "PostCSS plugin supports function to use random color",
+  "description": "PostCSS plugin supports function to use random colors",
   "keywords": [
     "postcss",
     "css",

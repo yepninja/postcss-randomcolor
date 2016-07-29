@@ -1,6 +1,6 @@
 # PostCSS Randomcolor [![Build Status][ci-img]][ci]
 
-[PostCSS] plugin supports function to use random color.
+[PostCSS] plugin supports function to use random colors.
 
 [PostCSS]: https://github.com/postcss/postcss
 [ci-img]:  https://travis-ci.org/alanev/postcss-randomcolor.svg
@@ -31,14 +31,25 @@
 ## Options of randomColor function
 
 ### luminosity
-Luminosity of the color
-Type: `string` -> `random`, `bright`, light`, `dark`
+Luminosity of the color<br>
+Type: `string` -> `random`, `bright`, `light`, `dark`<br>
 Default: `random`
 
+```css
+.foo {
+    color: randomColor(bright);
+}
+```
+
 ### hue
-Hue of the color
-Type: `string` -> `random`, `red`, orange`, `yellow`, `green`, `blue`, `purple`, `pink`, `monochrome`
+Hue of the color<br>
+Type: `string` -> `random`, `red`, `orange`, `yellow`, `green`, `blue`, `purple`, `pink`, `monochrome`<br>
 Default: `random`
+
+```css
+.foo {
+    color: randomColor(random, orange);
+}
 
 ## Usage
 
@@ -51,15 +62,20 @@ See [PostCSS] docs for examples for your environment.
 ## Plugin options
 
 ### options.functionName
-Name of the function that insert random color
-Type: `string`
+Name of the function that insert random color<br>
+Type: `string`<br>
 Default: `randomColor`
 
 ```js
 postcss([ require('postcss-randomcolor')({functionName: 'random-color'}) ])
 ```
+```css
+.foo {
+    color: random-color;
+}
+```
 
 ### options.format
-Format of the color
-Type: `string` -> `hex`, `hsl`, `rgb`
+Format of the color<br>
+Type: `string` -> `hex`, `hsl`, `rgb`<br>
 Default: `hex`
