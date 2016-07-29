@@ -50,6 +50,7 @@ Default: `random`
 .foo {
     color: randomColor(random, orange);
 }
+```
 
 ## Usage
 
