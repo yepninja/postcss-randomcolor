@@ -6,11 +6,8 @@ module.exports = postcss.plugin('postcss-randomcolor', (opts = {}) => {
 
     opts.functionName = opts.functionName || 'randomColor';
 
-    // Work with options here
-
     return css => {
 
-        // Transform CSS AST here
         css.walkDecls(decl => {
 
             let parsedValue = parseValue(decl.value);
@@ -19,7 +16,8 @@ module.exports = postcss.plugin('postcss-randomcolor', (opts = {}) => {
 
                 if (node.value !== opts.functionName) return;
 
-                let params = [];
+                let params = [],
+                    options = {};
                 if (node.type === 'function') {
                     params = node.nodes
                         .filter(({ type }) => type === 'word')
@@ -28,10 +26,11 @@ module.exports = postcss.plugin('postcss-randomcolor', (opts = {}) => {
                     node.type = 'word';
                 }
 
-                node.value = randomColor({
-                    luminosity: params[0],
-                    hue: params[1]
-                });
+                if (params[0]) options.luminosity = params[0];
+                if (params[1]) options.hue = params[1];
+                if (opts.format) options.format = opts.format;
+
+                node.value = randomColor(options);
             }).toString();
 
         });
